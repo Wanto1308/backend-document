@@ -22,6 +22,7 @@ const app = express();
   }
 })();
 
+app.get('/', (req, res) => res.send('Welcome to Upload Document'));
 app.use(cors({ origin: '*' }));
 app.use(cookieParser());
 app.use(express.json());
