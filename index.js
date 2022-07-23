@@ -30,4 +30,5 @@ app.use(FileUpload());
 app.use(express.static('public'));
 app.use(router);
 
-app.listen(3000, () => console.log('Server running at port 3000'));
+app.get('/', (req, res) => res.send('Welcome to Upload Document'));
+app.listen(process.env.PORT || 3000, () => console.log('Server running at port 3000'));
