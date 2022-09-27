@@ -80,7 +80,7 @@ export const updateUsers = async (req, res) => {
     });
     res.status(200).json({ message: "Berhasil mengubah data" });
   } catch (error) {
-    console.log(error.message);
+    res.status(404).json({ message: "Gagal mengubah data!" });
   }
 }
 
@@ -162,7 +162,7 @@ export const updatePassword = async (req, res) => {
     });
     res.status(200).json({ message: "Berhasil mengubah password" });
   } catch (error) {
-    console.log(error.message);
+    res.status(404).json({ message: "Gagal mengubah password!" });
   }
 }
 

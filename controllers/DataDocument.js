@@ -100,7 +100,7 @@ export const updateDocuments = async (req, res) => {
     if (fileSize > 5000000) return res.status(422).json({ message: "Image must be less than 5 MB" });
 
     file.mv(`./public/files/${fileName}`, (err) => {
-      if (err) return res.status(500).json({ msg: err.message });
+      if (err) return res.status(500).json({ message: err.message });
     });
   }
   const url = `${req.protocol}://${req.get("host")}/files/${fileName}`;
