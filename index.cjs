@@ -11,7 +11,7 @@ import router from './routes/index.js';
 dotenv.config();
 export const app = express();
 
-(async () => {
+const connectToDatabase = async () => {
   try {
     await db.authenticate();
     console.log('Database Connected...');
@@ -20,9 +20,10 @@ export const app = express();
   } catch (error) {
     console.error(error);
   }
-})();
+};
 
-// app.get('/', (req, res) => res.send('Welcome to Upload Document'));
+connectToDatabase();
+
 app.use(cors({ origin: '*' }));
 app.use(cookieParser());
 app.use(express.json());
