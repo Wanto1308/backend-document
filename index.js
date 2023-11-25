@@ -9,7 +9,7 @@ import DataDocument from './models/DataDocumentModel.js';
 import router from './routes/index.js';
 
 dotenv.config();
-export const app = express();
+const app = express();
 
 const connectToDatabase = async () => {
   try {
